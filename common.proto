@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+// i wanted to made a comment here but i got lazy
+// my condolences if you dont know what it means
+enum Origin {
+    DDNET = 0;
+    NOT_DDNET = 1;
+}

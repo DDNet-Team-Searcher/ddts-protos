@@ -1,4 +1,5 @@
 syntax = "proto3";
+import "common.proto";
 
 enum Action {
     START = 0;
@@ -8,6 +9,7 @@ enum Action {
 
 message Request {
     Action action = 1;
-    uint32 id = 2;
-    optional string map_name = 3;
+    Origin origin = 2;
+    uint32 id = 3;
+    optional string map_name = 4;
 }

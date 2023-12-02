@@ -1,4 +1,5 @@
 syntax = "proto3";
+import "common.proto";
 
 enum ResponseCode {
   ERROR = 0;
@@ -7,10 +8,12 @@ enum ResponseCode {
   WHOOPSIE_DAISY = 3;
 }
 
+//TODO: use oneof
 message Response {
   ResponseCode response_code = 1;
-  optional string password = 2;
-  optional uint32 port = 3;
-  optional uint32 used = 4;
-  optional uint32 max = 5;
+  Origin origin = 2;
+  optional string password = 3;
+  optional uint32 port = 4;
+  optional uint32 used = 5;
+  optional uint32 max = 6;
 }
