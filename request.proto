@@ -1,13 +1,14 @@
 syntax = "proto3";
 import "common.proto";
 
-enum Action {
-    START = 0;
-    SHUTDOWN = 1;
-    INFO = 2;
-}
-
 message Request {
+    enum Action {
+        UNKNOWN = 0;
+        START = 1;
+        SHUTDOWN = 2;
+        INFO = 3;
+    }
+
     Action action = 1;
     Origin origin = 2;
     uint32 id = 3;

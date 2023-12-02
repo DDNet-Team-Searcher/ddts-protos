@@ -1,19 +1,21 @@
 syntax = "proto3";
 import "common.proto";
 
-enum ResponseCode {
-  ERROR = 0;
-  OK = 1;
-  NOT_FOUND = 2;
-  WHOOPSIE_DAISY = 3;
-}
-
-//TODO: use oneof
+// TODO: use oneof
 message Response {
-  ResponseCode response_code = 1;
-  Origin origin = 2;
-  optional string password = 3;
-  optional uint32 port = 4;
-  optional uint32 used = 5;
-  optional uint32 max = 6;
+    enum ResponseCode {
+        UNKNOWN = 0;
+        ERROR = 1;
+        OK = 2;
+        NOT_FOUND = 3;
+        WHOOPSIE_DAISY = 4;
+    }
+
+    ResponseCode response_code = 1;
+    Origin origin = 2;
+    optional uint32 id = 3;
+    optional string password = 4;
+    optional uint32 port = 5;
+    optional uint32 used = 6;
+    optional uint32 max = 7;
 }
