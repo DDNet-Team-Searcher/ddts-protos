@@ -1,7 +1,20 @@
 syntax = "proto3";
 import "common.proto";
 
-// TODO: use oneof
+message Start {
+    optional string password = 1;
+    optional uint32 port = 2;
+}
+
+message Shutdown {
+    optional uint32 id = 1;
+}
+
+message Info {
+    optional uint32 used = 1;
+    optional uint32 max = 2;
+}
+
 message Response {
     enum ResponseCode {
         UNKNOWN = 0;
@@ -11,11 +24,11 @@ message Response {
         WHOOPSIE_DAISY = 4;
     }
 
-    ResponseCode response_code = 1;
+    ResponseCode code = 1;
     Origin origin = 2;
-    optional uint32 id = 3;
-    optional string password = 4;
-    optional uint32 port = 5;
-    optional uint32 used = 6;
-    optional uint32 max = 7;
+    oneof data {
+        Start start = 3;
+        Shutdown shutdown = 4;
+        Info info = 5;
+    }
 }
