@@ -2,17 +2,17 @@ syntax = "proto3";
 import "common.proto";
 
 message Start {
-    optional string password = 1;
-    optional uint32 port = 2;
+    string password = 1;
+    uint32 port = 2;
 }
 
 message Shutdown {
-    optional uint32 id = 1;
+    uint32 id = 1;
 }
 
 message Info {
-    optional uint32 used = 1;
-    optional uint32 max = 2;
+    uint32 used = 1;
+    uint32 max = 2;
 }
 
 message Response {

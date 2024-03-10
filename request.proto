@@ -12,5 +12,5 @@ message Request {
     Action action = 1;
     Origin origin = 2;
     uint32 id = 3;
-    optional string map_name = 4;
+    string map_name = 4;
 }
