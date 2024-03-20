@@ -20,7 +20,6 @@ message Stats {
         uint32 total_memory = 1;
         uint32 free_memory = 2;
         float load = 3;
-        string ip = 4;
     }
 
     message Happening {
