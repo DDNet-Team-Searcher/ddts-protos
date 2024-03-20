@@ -7,6 +7,7 @@ message Request {
         START = 1;
         SHUTDOWN = 2;
         INFO = 3;
+        STATS = 4;
     }
 
     Action action = 1;

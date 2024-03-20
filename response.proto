@@ -15,6 +15,25 @@ message Info {
     uint32 max = 2;
 }
 
+message Stats {
+    message System {
+        uint32 total_memory = 1;
+        uint32 free_memory = 2;
+        float load = 3;
+        string ip = 4;
+    }
+
+    message Happening {
+        uint32 pid = 1;
+        string map_name = 2;
+        uint32 port = 3;
+        string password = 4;
+    }
+
+    System system = 1;
+    repeated Happening happenings = 2;
+}
+
 message Response {
     enum ResponseCode {
         UNKNOWN = 0;
@@ -30,5 +49,6 @@ message Response {
         Start start = 3;
         Shutdown shutdown = 4;
         Info info = 5;
+        Stats stats = 6;
     }
 }
