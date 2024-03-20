@@ -17,9 +17,9 @@ message Info {
 
 message Stats {
     message System {
-        uint32 total_memory = 1;
-        uint32 free_memory = 2;
-        float load = 3;
+        uint64 total_memory = 1;
+        uint64 free_memory = 2;
+        double load = 3;
     }
 
     message Happening {
